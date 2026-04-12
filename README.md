@@ -29,22 +29,6 @@ PlaceMate solves this by:
 
 ---
 
-## 🧱 Tech Stack
-
-### Frontend
-
-- React (Vite)
-- Tailwind CSS
-
-### Planned Backend Integration
-
-- n8n (workflow automation)
-- Claude API (evaluation logic)
-- Google Sheets / Azure SQL (data storage)
-- Email / WhatsApp APIs (communication)
-
----
-
 ## 👥 User Roles
 
 ### 👤 Student
@@ -132,13 +116,19 @@ Login (Admin role) → Admin Dashboard
 
 ---
 
-### 🔒 Role-Based Access (Frontend Simulation)
+## 🧱 Tech Stack
 
-- Protected routes for:
-  - Admin dashboard
-  - Student dashboard
+### Frontend
 
-- Prevents unauthorized access via UI
+- React (Vite)
+- Tailwind CSS
+
+### Planned Backend Integration
+
+- n8n (workflow automation)
+- Claude API (evaluation logic)
+- Google Sheets / Azure SQL (data storage)
+- Email / WhatsApp APIs (communication)
 
 ---
 
@@ -184,7 +174,6 @@ src/
 
 ✅ Frontend fully completed
 ✅ UI/UX polished
-✅ Role-based navigation implemented
 ⏳ Backend integration pending
 
 ---
