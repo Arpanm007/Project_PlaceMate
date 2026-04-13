@@ -1,7 +1,31 @@
 import Card from "../components/Card";
 import Navbar from "../components/Navbar";
+import { useState, useEffect } from "react";
+import Loader from "../components/Loader";
 
 function CompanySelect() {
+
+  // 🔥 LOADING STATE
+  const [loading, setLoading] = useState(true);
+
+  // 🔥 SIMULATE AI PROCESSING
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500); // adjust timing if needed
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // 🔥 SHOW LOADER FIRST
+  if (loading) {
+    return (
+      <Loader
+        title="Matching companies..."
+        subtitle="Analyzing your skills and resume"
+      />
+    );
+  }
 
   // dummy AI output
   const companies = [
@@ -22,10 +46,10 @@ function CompanySelect() {
     },
   ];
 
-  //Sort Logic
+  // Sort Logic
   const sortedCompanies = [...companies].sort(
-  (a, b) => b.match - a.match
-);
+    (a, b) => b.match - a.match
+  );
 
   return (
     <div className="min-h-screen bg-white text-black dark:bg-black dark:text-white transition-colors duration-500">
@@ -52,6 +76,7 @@ function CompanySelect() {
           ))}
         </div>
       </div>
+
     </div>
   );
 }

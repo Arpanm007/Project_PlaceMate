@@ -18,18 +18,21 @@ function AuthForm({ isLogin }) {
     });
   };
 
-  const handleSubmit = (e) => {  
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    // 🔥 SAVE USER (TEMP)
+    localStorage.setItem("user", JSON.stringify(formData));
 
-    // 🔥 REGISTER FLOW
+    /* 🔁 FIREBASE VERSION (REPLACE LATER)
+    await signInWithEmailAndPassword(...)
+    */
+
     if (!isLogin) {
       navigate("/resume");
       return;
     }
 
-    // 🔥 LOGIN FLOW
     if (formData.role === "admin") {
       navigate("/admin");
     } else {
@@ -84,6 +87,7 @@ function AuthForm({ isLogin }) {
             <option value="admin">Admin</option>
           </select>
 
+          {/* 🔁 OPTIONAL INFO */}
           {/* <p className="text-xs text-gray-400 text-center">
             Admin access is restricted
           </p> */}
@@ -93,7 +97,7 @@ function AuthForm({ isLogin }) {
       {/* Button */}
       <button
         type="submit"
-        className="bg-white text-black py-3 rounded-lg font-semibold hover:bg-gray-200 transition duration-200"
+        className="bg-black text-white dark:bg-white dark:text-black py-3 rounded-lg font-semibold hover:opacity-80 transition duration-200"
       >
         {isLogin ? "Login" : "Register"}
       </button>

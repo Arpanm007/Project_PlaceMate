@@ -17,7 +17,10 @@ function ResumeUpload() {
   };
 
   if (loading) {
-    return <Loader />;
+    return <Loader 
+  title="Uploading your resume..."
+  subtitle="Please wait while we process your file"
+/>;
   }
 
   return (
