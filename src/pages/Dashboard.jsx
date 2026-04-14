@@ -7,7 +7,7 @@ import Loader from "../components/Loader";
 function Dashboard() {
 
   // 🔥 MOCK DATA (TEMPORARY)
-  const [data, setData] = useState({
+  const data = {
     score: 6,
     weakTopics: ["Dynamic Programming", "Graphs", "Recursion"],
     progress: [4, 5, 6, 6, 7],
@@ -23,7 +23,7 @@ function Dashboard() {
       "Resume updated (2 days ago)",
       "Score improved to 6/10"
     ]
-  });
+  };
 
   /* 🔁 FIREBASE VERSION (REPLACE LATER)
   useEffect(() => {
@@ -138,6 +138,20 @@ function Dashboard() {
           </ul>
         </div>
 
+
+        {/* 🔹 RECENT ACTIVITY */}
+        <div className="mt-8 bg-gray-200 dark:bg-gray-900 p-6 rounded-xl">
+          <h2 className="text-lg font-semibold mb-3">
+            Recent Activity
+          </h2>
+
+          <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
+            {data.activity.map((item, i) => (
+              <li key={i}>✔ {item}</li>
+            ))}
+          </ul>
+        </div>
+        
         {/* 🔹 AI INSIGHT */}
         <div className="mt-8 bg-gray-200 dark:bg-gray-900 p-6 rounded-xl text-center">
           <h2 className="text-xl font-semibold mb-3">
@@ -151,19 +165,6 @@ function Dashboard() {
             </span>.
             Your next quiz will prioritize this topic.
           </p>
-        </div>
-
-        {/* 🔹 RECENT ACTIVITY */}
-        <div className="mt-8 bg-gray-200 dark:bg-gray-900 p-6 rounded-xl">
-          <h2 className="text-lg font-semibold mb-3">
-            Recent Activity
-          </h2>
-
-          <ul className="space-y-1 text-sm text-gray-600 dark:text-gray-300">
-            {data.activity.map((item, i) => (
-              <li key={i}>✔ {item}</li>
-            ))}
-          </ul>
         </div>
 
       </div>
